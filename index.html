@@ -4,12 +4,16 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Home - Tech Shop</title>
-    <link
-      href="https://fonts.googleapis.com/css?family=Heebo:300,400,600,700&display=swap"
-      rel="stylesheet"
+    <meta
+      name="description"
+      content="최신 가전제품과 기술을 만나보세요, Tech Shop에서!
+      최첨단 노트북부터 필수 액세서리까지, 경쟁력 있는 가격으로!"
     />
+    <title>Home - Tech Shop</title>
+    <link rel="preload" href="/css/styles.css" as="style" />
+    <link rel="preload" href="/css/heebo.css" as="style" />
     <link rel="stylesheet" href="/css/styles.css" />
+    <link rel="stylesheet" href="/css/heebo.css" />
   </head>
 
   <body>
@@ -37,17 +41,41 @@
             <li><a href="about.html">About us</a></li>
             <li><a href="index.html#best-sellers-section">Best Sellers</a></li>
             <li><a href="index.html#newsletter-section">Newsletter</a></li>
-            <li class="menu-icon"><img src="images/menu_icon.png" /></li>
+            <li class="menu-icon">
+              <img
+                width="24"
+                height="16"
+                alt="메뉴 아이콘"
+                src="images/menu_icon.webp"
+              />
+            </li>
           </ul>
         </nav>
       </div>
     </header>
 
     <section class="hero">
-      <img class="desktop" src="images/Hero_Desktop.jpg" />
-      <img class="mobile" src="images/Hero_Mobile.jpg" />
-      <img class="tablet" src="images/Hero_Tablet.jpg" />
-
+      <picture>
+        <source
+          class="mobile"
+          media="(max-width : 576px)"
+          srcset="images/Hero_Mobile.webp"
+          type="image/webp"
+        />
+        <source
+          class="desktop"
+          media="(min-width : 577px) and (max-width : 960px)"
+          srcset="images/Hero_Tablet.webp"
+          type="image/webp"
+        />
+        <img
+          width="2160"
+          height="1005"
+          class="desktop"
+          alt="Hero section view on desktop and Tablet and Mobile"
+          src="images/Hero_Desktop.webp"
+        />
+      </picture>
       <div class="hero-content">
         <div class="container">
           <h1>Discover our line of VR Headsets</h1>
@@ -61,6 +89,7 @@
     </section>
 
     <section class="country-bar hidden"></section>
+    <section class="layout-shift-prevent-bar"></section>
 
     <section class="best-sellers" id="best-sellers-section">
       <h1>Best Sellers</h1>
@@ -69,14 +98,18 @@
         <div class="container">
           <div class="product new">
             <div class="product-picture">
-              <img src="images/vr1.jpg" alt="product: Penom Case" />
+              <img
+                loading="lazy"
+                src="images/vr1.webp"
+                alt="product: Penom Case"
+              />
             </div>
             <div class="product-info">
-              <h5 class="categories">Headsets, Apple</h5>
-              <h4 class="title">Apple Headset</h4>
-              <h3 class="price">
+              <h2 class="categories">Headsets, Apple</h2>
+              <h3 class="title">Apple Headset</h3>
+              <p class="price">
                 <span>US$ 450.00</span>
-              </h3>
+              </p>
               <button>Add to bag</button>
             </div>
           </div>
@@ -84,16 +117,17 @@
           <div class="product new">
             <div class="product-picture">
               <img
-                src="images/vr2.jpg"
+                loading="lazy"
+                src="images/vr2.webp"
                 alt="product: Noise Cancelling Headphone"
               />
             </div>
             <div class="product-info">
-              <h5 class="categories">Headsets, PS</h5>
-              <h4 class="title">Playstation Headset</h4>
-              <h3 class="price">
+              <h2 class="categories">Headsets, PS</h2>
+              <h3 class="title">Playstation Headset</h3>
+              <p class="price">
                 <span>US$ 399.99</span>
-              </h3>
+              </p>
               <button>Add to bag</button>
             </div>
           </div>
@@ -101,17 +135,18 @@
           <div class="product">
             <div class="product-picture">
               <img
-                src="images/vr3.jpg"
+                loading="lazy"
+                src="images/vr3.webp"
                 alt="product: Canon Digital SLR EOS Rebel T6"
               />
             </div>
             <div class="product-info">
-              <h5 class="categories">Headsets, Oculus</h5>
-              <h4 class="title">Oculus Headset</h4>
-              <h3 class="price">
+              <h2 class="categories">Headsets, Oculus</h2>
+              <h3 class="title">Oculus Headset</h3>
+              <p class="price">
                 <span class="discounted-price">US$ 349.99</span>
                 <span class="original-price">US$ 419.99</span>
-              </h3>
+              </p>
               <button>Add to bag</button>
             </div>
           </div>
