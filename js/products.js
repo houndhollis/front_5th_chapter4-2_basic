@@ -5,25 +5,24 @@ async function loadProducts() {
 }
 
 function displayProducts(products) {
-  // Find the container where products will be displayed
   const container = document.querySelector("#all-products .container");
+  container.innerHTML = "";
 
-  // Iterate over each product and create the HTML structure safely
+  const fragment = document.createDocumentFragment();
+
   products.forEach((product) => {
-    // Create the main product div
     const productElement = document.createElement("div");
     productElement.classList.add("product");
 
-    // Create the product picture div
     const pictureDiv = document.createElement("div");
     pictureDiv.classList.add("product-picture");
     const img = document.createElement("img");
     img.src = product.image;
     img.alt = `product: ${product.title}`;
     img.width = 250;
+    img.loading = "lazy";
     pictureDiv.appendChild(img);
 
-    // Create the product info div
     const infoDiv = document.createElement("div");
     infoDiv.classList.add("product-info");
 
@@ -44,19 +43,17 @@ function displayProducts(products) {
     const button = document.createElement("button");
     button.textContent = "Add to bag";
 
-    // Append elements to the product info div
     infoDiv.appendChild(category);
     infoDiv.appendChild(title);
     infoDiv.appendChild(price);
     infoDiv.appendChild(button);
 
-    // Append picture and info divs to the main product element
     productElement.appendChild(pictureDiv);
     productElement.appendChild(infoDiv);
 
-    // Append the new product element to the container
-    container.appendChild(productElement);
+    fragment.appendChild(productElement);
   });
+  container.appendChild(fragment);
 }
 
 loadProducts();
